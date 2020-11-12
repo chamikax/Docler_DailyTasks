@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Docler_DailyTasks::docler"
+             title="Docler"
+             module="Docler_DailyTasks"
+             sortOrder="80"
+             resource="Magento_Backend::admin"
+        />
+
+        <add id="Docler_DailyTasks::general"
+             title="General"
+             module="Docler_DailyTasks"
+             sortOrder="999"
+             resource="Magento_Backend::docler"
+             parent="Docler_DailyTasks::docler"
+        />
+
+        <add id="Docler_DailyTasks::index"
+             title="Daily Tasks"
+             module="Docler_DailyTasks"
+             sortOrder="1000"
+             action="docler/index/index"
+             resource="Docler_DailyTasks::index"
+             parent="Docler_DailyTasks::general"
+        />
+    </menu>
+</config>
