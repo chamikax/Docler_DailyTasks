@@ -4,18 +4,18 @@
  * @copyright Copyright© 2020. All rights reserved.
  */
 
-namespace Docler\DailyTasks\Controller\Adminhtml\Index;
+namespace Docler\DailyTasks\Controller\Adminhtml\Tasks;
 
-use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 
 /**
- * Class Index
- * @package Docler\DailyTasks\Controller\Adminhtml\Index
+ * Class AddTask
+ * @package Docler\DailyTasks\Controller\Adminhtml\Tasks
  */
-class Index extends Action
+class AddTask extends \Magento\Backend\App\Action
 {
+
     /**
      * @var PageFactory
      */
@@ -35,7 +35,7 @@ class Index extends Action
     }
 
     /**
-     * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|\Magento\Framework\View\Result\Page
+     * @return \Magento\Backend\Model\View\Result\Page|\Magento\Framework\Controller\ResultInterface|\Magento\Framework\View\Result\Layout
      */
     public function execute()
     {

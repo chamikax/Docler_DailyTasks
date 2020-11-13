@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author    Chamika <chamikax@gmail.com>
+ * @copyright Copyright© 2020. All rights reserved.
+ */
 
 namespace Docler\DailyTasks\Model\ResourceModel;
 
@@ -21,10 +25,11 @@ class Tasks extends AbstractDb
         parent::__construct($context);
     }
 
+    /**
+     * construct
+     */
     protected function _construct()
     {
         $this->_init('docler_daily_tasks', 'entity_id');
     }
-
-
 }

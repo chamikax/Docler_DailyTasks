@@ -1,5 +1,10 @@
 <?php
-namespace Docler\DailyTasks\Ui\DataProvider\Tasks\Listing;
+/**
+ * @author    Chamika <chamikax@gmail.com>
+ * @copyright Copyright© 2020. All rights reserved.
+ */
+
+namespace Docler\DailyTasks\Model\ResourceModel\Tasks;
 
 use DateTime;
 use Magento\Backend\Model\Auth\Session;
@@ -10,6 +15,10 @@ use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult;
 use Psr\Log\LoggerInterface as Logger;
 
+/**
+ * Class Collection
+ * @package Docler\DailyTasks\Model\ResourceModel\Tasks
+ */
 class Collection extends SearchResult
 {
     /**
@@ -70,6 +79,4 @@ class Collection extends SearchResult
 
         return $this;
     }
-
-
 }

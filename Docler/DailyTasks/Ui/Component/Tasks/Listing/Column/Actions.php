@@ -1,17 +1,25 @@
 <?php
+/**
+ * @author    Chamika <chamikax@gmail.com>
+ * @copyright Copyright© 2020. All rights reserved.
+ */
 
 namespace Docler\DailyTasks\Ui\Component\Tasks\Listing\Column;
 
-use Magento\Framework\Url;
+use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 
+/**
+ * Class Actions
+ * @package Docler\DailyTasks\Ui\Component\Tasks\Listing\Column
+ */
 class Actions extends Column
 {
 
     /**
-     * @var Url
+     * @var UrlInterface
      */
     protected $_urlBuilder;
 
@@ -25,10 +33,20 @@ class Actions extends Column
      */
     protected $_acknowledgeUrl;
 
+    /**
+     * Actions constructor.
+     * @param ContextInterface $context
+     * @param UiComponentFactory $uiComponentFactory
+     * @param UrlInterface $urlBuilder
+     * @param string $viewUrl
+     * @param string $acknowledgeUrl
+     * @param array $components
+     * @param array $data
+     */
     public function __construct(
         ContextInterface $context,
         UiComponentFactory $uiComponentFactory,
-        Url $urlBuilder,
+        UrlInterface $urlBuilder,
         $viewUrl = '',
         $acknowledgeUrl = '',
         array $components = [],
@@ -41,8 +59,6 @@ class Actions extends Column
     }
 
     /**
-     * Prepare Data Source
-     *
      * @param array $dataSource
      * @return array
      */
@@ -54,13 +70,14 @@ class Actions extends Column
                 if (isset($item['entity_id'])) {
                     $item[$name]['view']   = [
                         'href'  => $this->_urlBuilder->getUrl($this->_viewUrl, ['id' => $item['entity_id']]),
-                        'label' => __('View Task')
+                        'label' => __('Edit Task')
                     ];
-
-                    $item[$name]['acknowledge']   = [
-                        'href'  => $this->_urlBuilder->getUrl($this->_acknowledgeUrl, ['id' => $item['entity_id']]),
-                        'label' => __('Acknowledge')
-                    ];
+                    if ($item['acknowledged'] == 0) {
+                        $item[$name]['acknowledge'] = [
+                            'href' => $this->_urlBuilder->getUrl($this->_acknowledgeUrl, ['id' => $item['entity_id']]),
+                            'label' => __('Acknowledge')
+                        ];
+                    }
                 }
             }
         }
