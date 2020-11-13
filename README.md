@@ -19,6 +19,6 @@ php bin/magento setup:di:compile
 2. Navigate to Docler -> Daily Tasks
 
 Users can view their tasks for the day from the grid. 
-![alt text](https://github.com/chamikax/Docler_DailyTasks//blob/master/data/images/grid.png?raw=true)
+![alt text](https://github.com/chamikax/Docler_DailyTasks//blob/main/data/images/grid.png?raw=true)
 
 Once the task is done the use can acknowledge the task.
