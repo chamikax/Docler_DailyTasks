@@ -1,0 +1,17 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
++    <table name="docler_daily_tasks">
++        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
++        <column xsi:type="int" name="user_id" padding="10" nullable="false" comment="User Id"/>
++        <column xsi:type="int" name="creator_id" padding="10" nullable="false" comment="Creator Id"/>
++        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
++        <column xsi:type="varchar" name="description" nullable="false" length="255" comment="Description"/>
++        <column xsi:type="int" name="acknowledged" padding="10" nullable="false" comment="Acknowledged"/>
++        <column xsi:type="date" name="task_date"  comment="Task Date"/>
++        <column xsi:type="timestamp" name="time_acknowledged"  comment="Time of event"/>
++        <column xsi:type="timestamp" name="created" padding="10" comment="Created At"/>
++        <constraint xsi:type="primary" referenceId="PRIMARY">
++            <column name="entity_id"/>
++        </constraint>
++    </table>
+</schema>
