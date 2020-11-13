@@ -17,3 +17,8 @@ php bin/magento setup:di:compile
 ## Run the application
 1. Open the web browser and login to you Magento admin
 2. Navigate to Docler -> Daily Tasks
+
+Users can view their tasks for the day from the grid. 
+![alt text](https://github.com/chamikax/Docler_DailyTasks//blob/master/data/images/grid.png?raw=true)
+
+Once the task is done the use can acknowledge the task.
